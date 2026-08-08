@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "Workday Autofill Assistant",
+  "version": "0.1.0",
+  "description": "AI-assisted resume parsing and field mapping for Workday job applications. Fills forms only with your explicit confirmation before submission.",
+  "action": {
+    "default_popup": "src/popup/index.html"
+  },
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "assets/index.ts-loader-zEODrfWP.js"
+      ],
+      "matches": [
+        "*://*.myworkdayjobs.com/*",
+        "http://127.0.0.1/*"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "*://*.myworkdayjobs.com/*",
+    "http://localhost:8000/*",
+    "http://127.0.0.1/*"
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "*://*.myworkdayjobs.com/*",
+        "http://127.0.0.1/*"
+      ],
+      "resources": [
+        "assets/jsx-runtime-DXIIjyTY.js",
+        "assets/storage-DBTap_MK.js",
+        "assets/index.ts-BD4siBsl.js"
+      ],
+      "use_dynamic_url": false
+    }
+  ]
+}

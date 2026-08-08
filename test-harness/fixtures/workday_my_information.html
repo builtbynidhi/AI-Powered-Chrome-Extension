@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fixture: My Information</title>
+  </head>
+  <body>
+    <!-- Hand-captured Workday DOM patterns (data-automation-id, aria roles), sanitized
+         of any real applicant/company data. Used to smoke-test the extension's
+         Navigator/Parser/Filler against realistic markup without touching a live site. -->
+    <main role="main">
+    <h2>My Information</h2>
+
+    <div>
+      <label for="firstName">Given Name*</label>
+      <input id="firstName" data-automation-id="legalNameSection_firstName" />
+    </div>
+    <div>
+      <label for="lastName">Family Name*</label>
+      <input id="lastName" data-automation-id="legalNameSection_lastName" />
+    </div>
+    <div>
+      <label for="email">Email Address*</label>
+      <input id="email" type="email" data-automation-id="email" />
+    </div>
+
+    <fieldset>
+      <legend>Date of Birth</legend>
+      <input aria-label="Month" />
+      <input aria-label="Day" />
+      <input aria-label="Year" />
+    </fieldset>
+
+    <div role="radiogroup" aria-label="Are you legally authorized to work in this country?">
+      <div role="radio" aria-checked="false" tabindex="0">Yes</div>
+      <div role="radio" aria-checked="false" tabindex="0">No</div>
+    </div>
+    </main>
+  </body>
+</html>
